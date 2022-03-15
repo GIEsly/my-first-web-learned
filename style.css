@@ -1,0 +1,447 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;700;800&display=swap');
+
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box; 
+}
+
+:root {
+   --primary-color:rgb(0, 180, 9);
+   --secondary-color:rgb(255, 0, 0);
+   --warning-color:rgb(238, 255, 0);
+   --complimentary-color:rgb(228, 175, 0);
+}
+
+html {
+   scroll-behavior: smooth;
+}
+body {
+   font-family: 'Nunito Sans', sans-serif;
+   background: black;
+   color: white;
+   font-size: 1.1rem;
+}
+
+h1, h2, h3, h4 {
+   line-height: 1.6rem;
+}
+
+a {
+   text-decoration: none;
+   color: white;
+}
+
+ul {
+   list-style: none;
+}
+
+img {
+   width: 100%;
+}
+
+
+/* Header Section ----------------------------*/
+.main-header {
+   width: 100%;
+   height: 100vh;
+   position: relative;
+   background: url(./images/snial\ 3.jpg) no-repeat center center/cover;
+}
+
+.main-header::after{
+   content: '';
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background: rgb(0,0,0,.7);
+   z-index: 1;
+}
+
+/* Start Header Top Section */
+.header-top {
+   position: relative;
+   height: 90px;
+   z-index: 2;
+}
+
+.header-top .logo {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+}
+
+.header-top a {
+   position: absolute;
+   top: 40%;
+   right: 0;
+   transform: translate(-50%, -50%);
+}
+/* End Header Top Section */
+
+/* Start Header Content Section */
+.header-content {
+   position: relative;
+   margin: auto;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+   margin-top: 9rem;
+   z-index: 2;
+}
+
+.header-content h1 {
+   font-weight: 700;
+   font-size: 5rem;
+   line-height: 1.3rem;
+   margin: 0 0 2rem;
+}
+
+.header-content p {
+   text-transform: uppercase;
+   font-size: 1.5rem;
+   font-weight: 400;
+   line-height: 1.25rem;
+   margin: 1rem 2rem;
+}
+
+.header-content a {
+   margin-top: 2rem;
+}
+
+/* Utilities Section for Button */
+.btn {
+   display: inline-block;
+   background:var(--complimentary-color);
+   color: rgb(255, 255, 255);
+   padding: 0.4rem 1.5rem;
+   font-size: 1rem;
+   border: 0;
+   cursor: pointer; 
+   outline: none;
+   margin-right: .5rem;
+   border-radius: 3px;
+   box-shadow: 0 3px 0 rgb(0,0,0,.4);
+}
+
+.btn:hover {
+   background: var(--primary-color);
+}
+
+.btn.btn-rounded {
+   border-radius: 5px;
+}
+
+.btn.btn-xl {
+   font-size: 1.2rem;
+   padding: .8rem 1.3rem;
+   text-decoration: none;
+   border-radius: 10px;
+}
+
+/* -End of Utility Buttons- */
+
+/* End Header Content Section ----------------*/
+
+/* Gallery Section Area ----------------------*/
+.gallery {
+   position: relative;
+   width: 100%;
+}
+
+.gallery .gallery-container {
+   display: grid;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+   grid-template-columns: 2fr 1fr 1fr;
+   grid-template-rows: auto;
+   grid-template-areas: "box1 box2 box2"
+   "box1 box3 box3";
+}
+
+.gallery-container a:first-child{
+   grid-area: box1;
+}
+
+.gallery-container a:nth-child(2) {
+   grid-area: box2;
+}
+
+.gallery-container a:last-child {
+   grid-area: box3;
+}
+
+/* Overlay Animation */
+.image-container {
+   position: relative;
+   display: inline-block;
+   font-size: 4rem;
+   font-weight: 400;
+}
+
+.image-container .text-content {
+   opacity: 0;
+   position: absolute;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+   top: 0;
+   left: 0;
+   height: 100%;
+   width: 100%;
+   background: rgba(0,0,0,.8);
+   transition: all .3s ease-in-out;
+}
+
+.image-container .text-content:hover {
+   opacity: 1;
+}
+/* End Overlay Animation */
+/* End of Gallery Section Area ---------------*/
+
+/* About Section Area------------------------ */
+.about-section {
+   position: relative;
+   background: url(./images/snail\ 5.jpg)no-repeat top center/cover;
+   top: 0;
+   left: 0;
+   height: 600px;
+   width: 100%;
+}
+
+.overlay .about-section-inner {
+   height: 100%;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+   margin: auto;
+   max-width: 860px;
+   padding: 5rem 0;
+}
+
+ .about-section-inner h3{
+   font-size: 3rem;
+}
+
+.about-section-inner h2 {
+   font-size: 2rem;
+   line-height: 4rem;
+   margin-top: 8rem;
+}
+/* Utility for Overlay */
+.overlay {
+   position: absolute;
+   top: 0;
+   left: 0;
+   height: 100%;
+   width: 100%;
+   background: rgba(0,0,0,.4);
+}
+/* End Utility for Overlay */
+/* End About Section Area-------------------- */
+
+/* News Letter Section ---------------------- */
+.new-letter {
+   width: 100%;
+   height: 250px;
+   background-color: rgb(27, 27, 27);
+}
+
+.news-letter-inner {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+   padding-top: 5%;
+}
+
+.news-letter-inner h2 {
+   font-size: 2rem;
+   padding-bottom: 1rem;
+}
+
+.email-form {
+   width: 100%;
+   display: inline-block;
+   background: #555;
+   position: relative;
+   border-radius: 20px;
+   line-height: 0;
+   margin-top: 1rem;
+}
+
+.email-form .form-control {
+   display: inline-block;
+   border: 0;
+   outline: 0;
+   font-size: 1rem;
+   color: rgb(255, 255, 255);
+   background: transparent;
+   margin: 0;
+   padding: 0 1.5rem 0 1.5rem;
+   height: 45px;
+   border-radius: 20px;
+   width: 350px;
+}
+
+.email-form .submit {
+   display: inline-block;
+   position: absolute;
+   top: 0;
+   right: 0;
+   height: 45px;
+   width: 45px;
+   background:white;
+   font-size: 1rem;
+   text-align: center;
+   margin: 0;
+   padding:0;
+   outline: 0;
+   border: 0;
+   color: #333;
+   cursor: pointer;
+   border-radius: 0 20px 20px 0;
+}
+
+.email-form .submit:hover {
+   background: var(--primary-color);
+   color: white;
+}
+/* End News Letter Section ------------------ */
+
+/* Footer Section Area ---------------------- */
+.footer {
+   max-width: 75%;
+   margin: 2rem auto;
+   overflow: auto;
+}
+
+.footer a {
+   color: #999;
+   font-size: .9rem;
+}
+
+.footer p {
+   margin-bottom: 1.8rem;
+}
+
+.footer-col {
+   display: grid;
+   grid-template-columns: repeat(4, 1fr);
+   grid-gap:2rem;
+   line-height: 1.5rem;
+   margin-bottom: 12rem;
+}
+/* End Footer Section Area ------------------ */
+
+/* Media QuerySection ------------------------*/
+@media (max-width:700px){
+   /* Header Top */
+   .header-top {
+      height: 100px;
+   }
+   .header-top .logo {
+      font-size: 1.8rem;
+      padding-top: 2rem;
+   }
+   .header-top a {
+      top: 110%;
+      right: 22.5%;
+   }
+   /* ----------- */
+
+   /* Header Content */
+
+   .header-content {
+      width: 90%;
+      margin: auto;
+   }
+   .header-content h1{
+      font-size: 3.1rem;
+      line-height: 2.8rem;
+      margin-top: 10rem;
+   }
+
+   .header-content p {
+      padding: 0;
+      margin: 0;
+      font-size: 1rem;
+      width: 90%;
+      margin: auto;
+   }
+
+   .header-content a {
+      padding: 0;
+      margin: 0;
+      margin-top: 2rem;
+   }
+   /* -------------- */
+
+   /* Gallery Section */
+   .gallery .gallery-container {
+      grid-template-columns: 1fr;
+      grid-template-areas: "box1" "box2" "box3";
+   }
+   .gallery-container .image-container p {
+      font-size: 2.1rem;
+   }
+   /* --------------- */
+
+   /* About Us Section Area ----------------- */
+   .about-section .about-section-inner {
+      width: 90%;
+      margin: auto;
+   }
+
+   .about-section-inner h3 {
+      font-size: 3rem;
+      line-height: 2.8rem;
+      margin-top: 4rem;
+   }
+
+   .about-section-inner h2 {
+      padding: 0;
+      margin: 0;
+      line-height: 0;
+      margin-top: 5rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.8rem;
+   }
+
+   .about-section-inner p {
+      font-size: 1rem;
+   }
+   /* End About Us Section Area ------------- */
+
+   /* News Letter Section Area -------------- */
+   .news-letter-inner {
+      width: 80%;
+      margin: auto;
+   }
+
+   .news-letter-inner .email-form {
+      width: 80%;
+      margin: auto;
+      margin-top: 2rem;
+   }
+   /* End News Letter Section Area ---------- */
+
+   /* Footer Section Area ------------------- */
+   .footer-col {
+      grid-template-columns: repeat(2, 1fr);
+   }
+   /* End Footer Section Area --------------- */
+
+}
+/* Media QuerySection ------------------------*/
